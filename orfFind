@@ -6,22 +6,14 @@ proteins = ['F', 'F', 'L', 'L', 'S', 'S','S','S', 'Y', 'Y', 'Stop', 'Stop', 'C',
             'R','V','V','V','V','A','A','A','A','D','D','E','E', 'G', 'G', 'G', 'G']
 codonDict = dict(zip(codons, proteins))
 
-def revComp(s):
-    dna = s
-
-    revComp = ''
-
-    for char in dna:
-        if char == 'A':
-            rev = 'T' 
-        elif char == 'T':
-            rev = 'A'
-        elif char == 'G':
-            rev = 'C'
-        elif char == 'C':
-            rev = 'G'
-        revComp = rev + revComp
-    return revComp
+def rev_comp(dna):
+    rev_comp = ''
+    keys = 'ACTG'
+    vals = 'TGAC'
+    rev_letters = dict(zip(keys,vals))
+    for c in dna:
+        rev_comp += rev_letters[c]
+    return rev_comp
 
 
 
