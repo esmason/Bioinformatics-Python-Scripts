@@ -1,0 +1,50 @@
+import math
+
+file = open('dna7.txt')
+
+read = file.read()
+
+file = read
+
+test = file.replace('\n', ',')
+
+test = test.split(' ')
+
+inarray = [int(x.replace(',', '')) for x in test]
+
+inarray = list(reversed(inarray))
+P = [None for i in range(len(inarray))]
+M = [None for i in range(len(inarray) + 1)]
+
+L=0
+for i in range(len(inarray)):
+    lo = 1
+    hi = L
+    while lo <= hi:
+        mid = math.ceil((lo+hi)/2)
+        #print(M)
+        if inarray[M[mid]] <= inarray[i]:
+            lo = mid + 1
+        else:
+            hi = mid - 1
+    newL = lo
+
+    P[i] = M[newL - 1]
+    M[newL] = i
+
+    if newL > L:
+        L = newL
+
+S = [None for i in range(L)]
+k = M[L]
+for i in reversed(range(L)):
+    S[i] = inarray[k]
+    k = P[k]
+
+for s in reversed(S):
+    print(s, end = '')
+    print(' ', end = '')
+
+print('')
+
+
