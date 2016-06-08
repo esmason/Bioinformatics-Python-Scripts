@@ -32,4 +32,14 @@ for s in ans:
     print(s, end = '')
 print(' ')
 
+#use this helper to find the shortest common supersequence, using the longest common subsequence
+def interleave(string1, string2, lcs):
+    if len(lcs) == 0:
+        result = string1 + string2
+    else:
+        common = lcs[0]
+        index1 = string1.index(common)
+        index2 = string2.index(common)
+        result = string1[:index1] + string2[:index2] + common + interleave(string1[index1 + 1:], string2[index2+1:], lcs[1:])
 
+    return result
