@@ -2,7 +2,7 @@ import re
 from random import randint
 
 def get_shortest_super(file):
-    
+    '''reconstructs dna sequence from overlapping reads on same superstring, note: strings overlap by at least half'''
     '''file (string) name of a txt file that must be in fasta format with reads coming from the same strand of DNA'''
     
     #open the file, split superstring, remove any non ACTG from strings, remove empty strings from list
