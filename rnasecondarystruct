@@ -23,15 +23,10 @@ def rna_catalan(i, j):
     return D[i][j]
 
 
+letterDict = dict(zip('AUCG', 'UAGC'))
 def is_valid(i , j):
-    if rna[i] == 'A' and rna[j] == 'U':
-        return 1
-    elif rna[i] == 'U' and rna[j] == 'A':
-        return 1
-    elif rna[i] == 'C' and rna[j] == 'G':
-        return 1
-    elif rna[i] == 'G' and rna[j] == 'C':
+    if rna[i] == letterDict[rna[j] ]:
         return 1
     else:
         return 0
-rna_catalan(0,len(rna)-1)
+print(rna_catalan(0,len(rna)-1))
