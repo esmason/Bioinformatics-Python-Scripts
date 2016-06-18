@@ -1,7 +1,7 @@
 import re
 
 def find_errors(file_name):
-    ''' a read is considered 'correct' if it occurs twice or more, specific errors must occur at most once,'''
+    ''' file_name is .txt file in FASTA format a read is considered 'correct' if it occurs twice or more, specific errors must occur at most once,'''
     file = open(file_name, 'r')
     answers = []
     correctSeq ={}
