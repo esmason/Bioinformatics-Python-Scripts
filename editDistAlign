@@ -10,7 +10,7 @@ def find_alignment(string1, string2):
         
         for j in range(len(string2)+1):
             if i == 0 or j == 0:
-                distTable[i][j] = 0
+                distTable[i][j] = min(i, j)
                 strTable[i][j] = ('','')
 
             elif string1[i-1] == string2[j-1]:
