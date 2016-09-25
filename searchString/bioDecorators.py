@@ -4,7 +4,7 @@
       -download fasta format data  '''
       
 
-import urllib2
+#import urllib2
 
 
 def fastaReader(func):
