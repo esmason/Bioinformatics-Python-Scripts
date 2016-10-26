@@ -1,6 +1,9 @@
 import sys
 import re
 
+"""creates and prints the edges of a trie of strings https://en.wikipedia.org/wiki/Trie from a list of DNA
+sequences. the representation of each edge in the trie is as follows:
+origin-node  end-node edge_letter"""
         
 def read_parse_file(filename):
 	f = open(filename)
