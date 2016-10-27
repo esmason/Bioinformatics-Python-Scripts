@@ -14,6 +14,7 @@ def read_parse_file(filename):
     return strings
 
 def create_trie(strings, branchpoint, last_node_used):
+    strings = [s for s in sorted(strings)]
     if len(strings) == 0:
         return []
     else:
@@ -37,8 +38,7 @@ def create_trie(strings, branchpoint, last_node_used):
 
 filename = re.sub("\n", "", sys.stdin.readline() )
 strings = read_parse_file(filename)
-sorted_strings = [s for s in sorted(strings)]
-trie = create_trie(sorted_strings, 1, 1)
+trie = create_trie(strings, 1, 1)
 for elt in trie:
     elt = [str(i) for i in elt]
     print(" ".join(elt))
