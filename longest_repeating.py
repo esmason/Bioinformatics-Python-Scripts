@@ -1,0 +1,3 @@
+import Trie
+
+trie = Trie()
